@@ -10,9 +10,6 @@
     for ($i = 0; $i < 1292; $i++) 
     { 
         $nomesPokemonsArray[] = $nomesPokemons['results'][$i]['name'];
-
-        
-      
     }
 
     if(in_array($pokemonUsuario, $nomesPokemonsArray))
@@ -26,8 +23,10 @@
         foreach ($pokemon['moves'] as $move) 
         {
             print(" - " . $move['move']['name']. "\n");
-        }
-
-            
+        }     
+    }
+    else
+    {
+        print "Insira um pokémon valido.";
     }
     
