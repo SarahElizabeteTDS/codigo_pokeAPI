@@ -15,7 +15,6 @@
     if(in_array($pokemonUsuario, $nomesPokemonsArray))
     {
         print(strtoupper($pokemon['name']). "\n");
-        print("numero: ");
         print("altura: " . $pokemon['height']/10 . "m \n");
         print("peso: " . $pokemon['weight']/10 . "kg \n");
         print("movimentos: ");
