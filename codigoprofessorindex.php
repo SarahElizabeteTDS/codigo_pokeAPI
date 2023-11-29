@@ -59,7 +59,7 @@
         <div id = "pokemons">
             <?php for($i = 0; $i < 20; $i++):?>
                 <div class = "pokemon">
-                    <img src = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/448.png" alt = "Lucario" width = "300px">
+                    <img src = " <?=$pokemons['results'][$i]['sprites']['other']['dream_world']['front_default']; ?> " alt = "pokémon!" width = "300px">
 
                     <h1><?php print $pokemons['results'][$i]['name'];?></h1>
                     <p>peso: 0.8</p>
