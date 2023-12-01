@@ -4,7 +4,9 @@
 
    $short = "p";
 
-   $long = ["pokemon:"];
+   $long = [
+     "pokemon:"
+   ];
 
   $options = getopt($short, $long);
 
