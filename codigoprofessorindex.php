@@ -16,6 +16,12 @@
         $pokemons['results'][$i] = json_decode($todas_api, true);
     }
 
+    if(isset($_GET['capo_busca']))
+    {
+        
+
+    }
+
 ?>
 
 <html>
@@ -31,18 +37,36 @@
                 padding: 20px;
                 text-align: center;
             }
+
+            #pesquisa input [type = "text"]
+            {
+                width: 300px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-radius: 15px;
+            }
+
+            #pesquisa input [type = "submit"]
+            {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-radius: 15px;
+            }
+
             .pokemon
             {
-                width: 15%;
-                border: solid 2px #555; 
+                width: 15.4%;
+                border: solid 4px #000; 
                 padding: 28px; 
-                margin: 15px;
-                background: #666;
+                margin: 10px 10px 10px 10px;
+                background: #888;
                 float: left;
+                text-align: center;
             }
-            .pokemons img
+            .pokemon img
             {
                 max-width: 100%;
+                height: 300px;
             }
         </style>
 
@@ -50,8 +74,8 @@
     
     <body>
         <div id = "pesquisa">
-            <form>
-                <input type = "text" placeholder = "Digite um Pokémon">
+            <form method = "get">
+                <input type = "text" name= "campo_busca" placeholder = "Digite um Pokémon">
                 <input type = "submit" value = "Buscar">
             </form>
         </div>
@@ -62,8 +86,8 @@
                     <img src = " <?=$pokemons['results'][$i]['sprites']['other']['dream_world']['front_default']; ?> " alt = "pokémon!" width = "300px">
 
                     <h1><?php print $pokemons['results'][$i]['name'];?></h1>
-                    <p>peso: 0.8</p>
-                    <p>altura: 0.8</p>
+                    <p><?php print "peso: " . ($pokemons['results'][$i]['weight'])/10 . "kg";?></p>
+                    <p><?php print "altura: " . ($pokemons['results'][$i]['height'])/10 . "m";?></p>
                 </div>
             <?php endfor; ?>
         </div>
