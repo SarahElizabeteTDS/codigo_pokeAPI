@@ -21,6 +21,7 @@
    print("peso: " . $pokemon['weight'] . "\n");
    print("movimentos:\n");
    
-   foreach ($pokemon['moves'] as $move) {
+   foreach ($pokemon['moves'] as $move) 
+   {
         print(" - " . $move['move']['name'] . "\n");
    }
