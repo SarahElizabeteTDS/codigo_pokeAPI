@@ -90,7 +90,7 @@
         </div>
 
         <div id = "pokemons">
-            <?php for($i = 0; $i < count($pokemons); $i++):?>
+            <?php for($i = 0; $i < 20; $i++):?>
                 <div class = "pokemon">
                     <img src = " <?=$pokemons['results'][$i]['sprites']['other']['dream_world']['front_default']; ?> " alt = "pokémon!" width = "300px">
 
