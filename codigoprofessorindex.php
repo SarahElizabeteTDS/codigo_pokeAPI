@@ -18,8 +18,17 @@
 
     if(isset($_GET['capo_busca']))
     {
-        
+        $encontrados = [];
 
+        foreach ($pokemons['results'] as $poke) 
+        {
+            if (str_contains($poke['name'], $_GET['campo_busca'])) 
+            {
+                $encontrados[] = $poke;
+            }
+        }
+
+        $pokemons = $encontrados;
     }
 
 ?>
