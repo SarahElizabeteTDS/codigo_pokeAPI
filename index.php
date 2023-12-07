@@ -2,6 +2,7 @@
 
     // include 'logica.php';
 
+
     $pokemons_api = file_get_contents('https://pokeapi.co/api/v2/pokemon');
     $pokemons = json_decode($pokemons_api, true);
 
