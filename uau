@@ -1,0 +1,15 @@
+if (isset($_GET['campo_busca'])) 
+{
+    $encontrados = [];
+
+    for ($i = 0; $i < 20; $i++) 
+    {
+        $nomePokemon = $pokemons['results'][$i]['name'];
+        
+        if (str_contains(strtolower($nomePokemon), strtolower($_GET['campo_busca']))) 
+        {
+            $encontrados[] = $pokemons['results'][$i];
+        }
+     }
+     $pokemons = $encontrados;
+}
