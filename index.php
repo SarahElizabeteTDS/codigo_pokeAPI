@@ -16,25 +16,22 @@
         $pokemons['results'][$i] = json_decode($todas_api, true);
     }
 
-    if(isset($_GET['campo_busca']))
+    if (isset($_GET['campo_busca'])) 
+{
+    $encontrados = [];
+
+    for ($i = 0; $i < 20; $i++) 
     {
-        $encontrados = [];
-
-        for($i = 0; $i <= 20; $i++)
+        $nomePokemon = $pokemons['results'][$i]['name'];
+        
+        if (str_contains(strtolower($nomePokemon), strtolower($_GET['campo_busca']))) 
         {
-            foreach ($pokemons['results'][$i]['name'] as $poke) 
-            {
-                if (str_contains($poke, $_GET['campo_busca'])) 
-                {
-                    $encontrados[] = $poke;
-                }
-            } 
-            var_dump($encontrados);
-            die();
+            $encontrados[] = $pokemons['results'][$i];
         }
-
-        $pokemons = $encontrados;
-    } 
+     }
+     
+     $pokemons['results'] = $encontrados;
+}
 
 ?>
 
