@@ -17,21 +17,21 @@
     }
 
     if (isset($_GET['campo_busca'])) 
-{
-    $encontrados = [];
-
-    for ($i = 0; $i < 20; $i++) 
     {
-        $nomePokemon = $pokemons['results'][$i]['name'];
-        
-        if (str_contains(strtolower($nomePokemon), strtolower($_GET['campo_busca']))) 
+        $encontrados = [];
+
+        for ($i = 0; $i < 20; $i++) 
         {
-            $encontrados[] = $pokemons['results'][$i];
+            $nomePokemon = $pokemons['results'][$i]['name'];
+            
+            if (str_contains(strtolower($nomePokemon), strtolower($_GET['campo_busca']))) 
+            {
+                $encontrados[] = $pokemons['results'][$i];
+            }
         }
-     }
-     
-     $pokemons['results'] = $encontrados;
-}
+        
+        $pokemons['results'] = $encontrados;
+    }
 
 ?>
 
@@ -93,15 +93,14 @@
 
         <div id = "pokemons">
             <?php for($i = 0; $i < 20; $i++):?>
-                <div class = "pokemon">
-                    <img src = " <?=$pokemons['results'][$i]['sprites']['other']['dream_world']['front_default']; ?> " alt = "pokémon!" width = "300px">
+                    <div class = "pokemon">
+                        <img src = " <?=$pokemons['results'][$i]['sprites']['other']['dream_world']['front_default']; ?> " alt = "pokémon!" width = "300px">
 
-                    <h1><?php print $pokemons['results'][$i]['name'];?></h1>
-                    <p><?php print "peso: " . ($pokemons['results'][$i]['weight'])/10 . "kg";?></p>
-                    <p><?php print "altura: " . ($pokemons['results'][$i]['height'])/10 . "m";?></p>
-                </div>
+                        <h1><?php print $pokemons['results'][$i]['name'];?></h1>
+                        <p><?php print "peso: " . ($pokemons['results'][$i]['weight'])/10 . "kg";?></p>
+                        <p><?php print "altura: " . ($pokemons['results'][$i]['height'])/10 . "m";?></p>
+                    </div>
             <?php endfor; ?>
         </div>
-
     </body>
 </html>
